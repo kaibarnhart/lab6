@@ -13,7 +13,6 @@
     </form>
 
     <?php
-    // Check if the 'number' parameter is set
     if (isset($_GET['number'])) {
         $size = (int)$_GET['number'];
 
