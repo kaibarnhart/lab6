@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Practice 2</title>
+   <h1>EECS 348 Lab 6 Practice 2</h1>
+   <p></p>
+   <style>
+       #paragraph {
+           background-color: white;
+           border: 4px solid black;
+       }
+   </style>
+</head>
 
+<body>
+   <div id="paragraph">
+       <p>Paragraph to be altered.</p>
+   </div>
+   <div>
+       <p></p>
+       <label for="Border">Border Width:</label>
+       <input type="text" id="Border" name="Border">
+       <p></p>
+
+       <label for="BRR">Border R  (0-255):</label>
+       <input type="text" id="BRR" name="BRR">
+       <p></p>
+       <label for="BRG">Border G  (0-255):</label>
+       <input type="text" id="BRG" name="BRG">
+       <p></p>
+       <label for="BRB">Border B  (0-255):</label>
+       <input type="text" id="BRB" name="BRB">
+       <p></p>
+      
+       <label for="BGR">Background R (0-255):</label>
+       <input type="text" id="BGR" name="BGR">
+       <p></p>
+       <label for="BGG">Background G (0-255):</label>
+       <input type="text" id="BGG" name="BGG">
+       <p></p>
+       <label for="BGB">Background B (0-255):</label>
+       <input type="text" id="BGB" name="BGB">
+       <p></p>
+
+       <button onclick="change()">Change the color!</button>
+
+   </div>
+   <script>
+       function change() {
+           var size = document.getElementById("Border").value;
+           var red = document.getElementById("BRR").value;
+           var green = document.getElementById("BRG").value;
+           var blue = document.getElementById("BRB").value;
+           var bgRed = document.getElementById("BGR").value;
+           var bgGreen = document.getElementById("BGG").value;
+           var bgBlue = document.getElementById("BGB").value;
+
+
+           var paragraph = document.getElementById("paragraph");
+           paragraph.style.borderWidth = size + "px";
+           var borderCol = "rgb(" + red + "," + green + "," + blue + ")";
+           paragraph.style.borderColor = borderCol;
+           var bgCol = "rgb(" + bgRed + "," + bgGreen + "," + bgBlue + ")";
+           paragraph.style.backgroundColor = bgCol;
+       }
+   </script>
+</body>
+</html>
